@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFedoraBR - XFCE</title>
+    <link rel="shortcut icon" href="TechFedoraLogo2.png" type="imagem/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Importação da fonte Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        /* Estilos base e transição para suavizar a troca de tema */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Cor de fundo padrão Dark Mode */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        /* Gradiente para o Título (funciona bem em ambos os temas) */
+        .text-gradient {
+            background-image: linear-gradient(to right, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Classe para o tema claro (será adicionada via JS no body) */
+        .light-mode {
+            background-color: #f8fafc; /* bg-gray-50 */
+            color: #1f2937; /* text-gray-900 */
+        }
+
+        /* Transição para todos os elementos que mudam de cor */
+        .transition-colors {
+            transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+            transition-duration: 300ms;
+        }
+
+        /* Estilo para a Navbar no tema claro */
+        .light-mode .navbar-dark {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body data-theme="dark" class="bg-gray-900 text-white leading-relaxed antialiased transition-colors">
+
+    <!-- Navbar -->
+    <!-- Adicionada a classe 'navbar-dark' para ser alvo de troca de tema -->
+    <nav class="sticky top-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg navbar-dark transition-colors">
+        <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gradient">TechFedoraBR</a>
+            
+            <div class="flex items-center space-x-6">
+                <!-- Links de Navegação -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="recursos.html" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 navbar-link">Recursos</a>
+                    <a href="#download" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 navbar-link">Download</a>
+                    <a href="#suporte" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 navbar-link">Suporte</a>
+                    <!-- O link estático "Tema Claro" foi removido daqui. -->
+                </div>
+
+                <!-- Botão de Toggle do Tema -->
+                <button id="theme-toggle" class="p-2 rounded-full text-white bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition-colors" aria-label="Alternar Tema">
+                    <!-- Ícone (será preenchido pelo JavaScript) -->
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 md:px-8 py-16 text-center">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-gradient">TechFedoraBR XFCE</h1>
+        <p class="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+            Leve e eficiente. Uma excelente escolha para máquinas mais antigas ou quem busca desempenho. 
+        </p>
+        
+        <img src="Xfce-Desktop.png" alt="Captura de tela da interface XFCE" class="mt-8 rounded-xl shadow-xl mx-auto max-w-full">
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-200 mt-12 mb-6">Escolha sua versão</h2>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-8">
+            <!-- Card para a versão Pessoal -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl space-y-4 transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold text-gradient">Uso Pessoal</h3>
+                <p class="text-gray-400">
+                    Perfeita para uso diário, estudo e navegação casual. Inclui todos os aplicativos essenciais.
+                </p>
+                <a href="https://link-do-seu-terabox.com/kde-pessoal" target="_blank" class="inline-block px-6 py-2 bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200 text-white font-bold rounded-full shadow-lg">
+                    Baixar Versão Pessoal
+                </a>
+            </div>
+
+            <!-- Card para a versão Estudante -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl space-y-4 transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold text-gradient">Estudante</h3>
+                <p class="text-gray-400">
+                    Otimizada para estudantes e pesquisadores, com ferramentas acadêmicas e de programação pré-instaladas.
+                </p>
+                <a href="https://link-do-seu-terabox.com/kde-estudante" target="_blank" class="inline-block px-6 py-2 bg-purple-600 hover:bg-purple-700 transition-colors duration-200 text-white font-bold rounded-full shadow-lg">
+                    Baixar Versão Estudante
+                </a>
+            </div>
+
+            <!-- Card para a versão Empresarial -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl space-y-4 transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-2xl font-semibold text-gradient">Empresarial</h3>
+                <p class="text-gray-400">
+                    Para uso em ambientes de trabalho. Focada em estabilidade, segurança e aplicativos de produtividade.
+                </p>
+                <a href="https://link-do-seu-terabox.com/kde-empresarial" target="_blank" class="inline-block px-6 py-2 bg-cyan-600 hover:bg-cyan-700 transition-colors duration-200 text-white font-bold rounded-full shadow-lg">
+                    Baixar Versão Empresarial
+                </a>
+            </div>
+        </div>
+    </main>
+    <!-- Script para o Toggle de Tema Dinâmico -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const toggleButton = document.getElementById('theme-toggle');
+
+            // 1. Define o tema inicial lendo o localStorage ou definindo 'dark' como padrão
+            let currentTheme = localStorage.getItem('theme') || 'dark';
+
+            /**
+             * Mapeamento de classes: Converte classes de tema escuro para claro e vice-versa.
+             * Usei classes customizadas (ex: .card-bg) para simplificar as trocas no JS, 
+             * mas também trocando classes Tailwind diretas.
+             */
+            const classMap = {
+                // Escuro -> Claro
+                'dark': {
+                    // Fundo e Navbar
+                    'bg-gray-900': 'bg-gray-50', // Cor do Body e Seções
+                    'bg-opacity-90': 'bg-opacity-100', // Navbar opaca no modo claro
+                    'backdrop-blur-md': '', // Desativa blur no modo claro
+                    'navbar-dark': 'navbar-light', // Troca a cor da navbar (definida no <style>)
+
+                    // Cards e Botões Secundários
+                    'bg-gray-800': 'bg-white', // Fundo dos Cards
+                    'bg-gray-700': 'bg-gray-200', // Botão Saber Mais e Toggle Button
+
+                    // Textos
+                    'text-white': 'text-gray-900', // Títulos principais, botões
+                    'text-gray-200': 'text-gray-800', // Títulos de Seção
+                    'text-gray-300': 'text-gray-700', // Links da Navbar
+                    'text-gray-400': 'text-gray-600', // Parágrafos e Card Text
+                    'text-gray-500': 'text-gray-500', // Rodapé (mantém)
+                    'text-indigo-400': 'text-indigo-600', // Ícones de feature
+
+                    // Ícones do botão de toggle
+                    'text-white': 'text-gray-900', 
+                },
+                // Claro -> Escuro (Inverso)
+                'light': {
+                    'bg-gray-50': 'bg-gray-900',
+                    'bg-opacity-100': 'bg-opacity-90',
+                    '': 'backdrop-blur-md',
+                    'navbar-light': 'navbar-dark',
+
+                    'bg-white': 'bg-gray-800',
+                    'bg-gray-200': 'bg-gray-700',
+
+                    'text-gray-900': 'text-white',
+                    'text-gray-800': 'text-gray-200',
+                    'text-gray-700': 'text-gray-300',
+                    'text-gray-600': 'text-gray-400',
+                    'text-gray-500': 'text-gray-500',
+                    'text-indigo-600': 'text-indigo-400',
+                }
+            };
+
+            /**
+             * Aplica o tema (troca as classes) e atualiza o botão/ícone.
+             * @param {string} theme - 'dark' ou 'light'
+             */
+            function setTheme(theme) {
+                const targetTheme = theme === 'dark' ? 'light' : 'dark'; // Tema de onde as classes estão vindo
+                const replaceMap = classMap[targetTheme];
+                const allElements = body.querySelectorAll('*');
+                
+                body.setAttribute('data-theme', theme);
+                body.classList.toggle('light-mode', theme === 'light');
+
+                // Itera sobre todos os elementos e faz a troca de classes
+                allElements.forEach(el => {
+                    if (el.classList.length > 0) {
+                        Object.entries(replaceMap).forEach(([oldClass, newClass]) => {
+                            if (el.classList.contains(oldClass)) {
+                                el.classList.remove(oldClass);
+                                if (newClass) {
+                                    el.classList.add(newClass);
+                                }
+                            }
+                        });
+                    }
+                });
+                
+                // Troca as classes no BODY
+                Object.entries(replaceMap).forEach(([oldClass, newClass]) => {
+                    if (body.classList.contains(oldClass)) {
+                        body.classList.remove(oldClass);
+                        if (newClass) {
+                            body.classList.add(newClass);
+                        }
+                    }
+                });
+
+                updateToggleButton(theme);
+                localStorage.setItem('theme', theme);
+            }
+
+            /**
+             * Atualiza o ícone do botão com base no tema atual.
+             * @param {string} theme - 'dark' ou 'light'
+             */
+            function updateToggleButton(theme) {
+                if (theme === 'dark') {
+                    // Tema Escuro (Mostra Sol para ir para o Claro)
+                    toggleButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                            </svg>`;
+                    // Garante que o ícone é branco no dark mode
+                    toggleButton.classList.remove('text-gray-900');
+                    toggleButton.classList.add('text-white');
+                } else {
+                    // Tema Claro (Mostra Lua para ir para o Escuro)
+                    toggleButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                            </svg>`;
+                    // Garante que o ícone é escuro no light mode
+                    toggleButton.classList.remove('text-white');
+                    toggleButton.classList.add('text-gray-900');
+                }
+            }
+            
+            /**
+             * Função que alterna o tema
+             */
+            function toggleTheme() {
+                currentTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                setTheme(currentTheme);
+            }
+
+            // 2. Aplica o tema lido no localStorage (ou o padrão 'dark') na inicialização
+            if (currentTheme === 'light') {
+                 // Aplica o tema claro
+                 setTheme('light');
+            } else {
+                // Se for 'dark', apenas garante que o ícone está correto
+                updateToggleButton('dark');
+            }
+
+            // 3. Adiciona o listener de clique no botão
+            toggleButton.addEventListener('click', toggleTheme);
+        });
+    </script>
+</body>
+</html>
+
